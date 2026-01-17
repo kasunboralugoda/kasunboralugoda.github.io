@@ -78,6 +78,20 @@
       color: white;
     }
 
+    nav f {
+  position: sticky;
+  top: 10px;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 12px 10px;
+  margin: 0 20px;
+  border-radius: 30px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+
     section {
       max-width: 900px;
       margin: auto;
@@ -132,7 +146,7 @@
 <body>
 
 <header>
-  <img src="photo.jpg" alt="Kasun Deeptha Boralugoda">
+  <img src="Photo.jpg" alt="Kasun Deeptha Boralugoda">
   <div class="hero-text">
     <h1>Kasun Deeptha Boralugoda</h1>
     <div class="subtitle">Care Professional · Technologist · Community Contributor</div>
@@ -141,7 +155,7 @@
   </div>
 </header>
 
-<nav>
+<nav f>
   <a href="#profile">Profile</a>
   <a href="#education">Education</a>
   <a href="#community">Community</a>
