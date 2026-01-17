@@ -178,6 +178,43 @@ transition: background 0.3s;
 background: #4a7258;
 }
 </style>
+  /* Accordion styles */
+.accordion {
+  margin-top: 20px;
+}
+
+.accordion-header {
+  width: 100%;
+  background: #eef3f1;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  font-size: 1em;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+  background: #5f8d6a;
+  color: white;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 0 18px;
+  transition: max-height 0.35s ease;
+}
+
+.accordion-content p {
+  margin: 16px 0;
+}
+
 </head>
 
 <body>
