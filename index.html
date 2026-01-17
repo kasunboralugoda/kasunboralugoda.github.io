@@ -270,45 +270,103 @@
 
     <section id="contact">
   <div class="card">
-    <h2>Contact</h2>
-    <p>Please feel free to get in touch.</p>
-
     <!-- 🔗 Replace with your real Formspree form URL -->
-<section id="contact">
-  <div class="card contact-card">
-    <h2>Contact</h2>
-    <p class="contact-intro">Please feel free to get in touch.</p>
+/* Contact card wider */
+.contact-card {
+  max-width: 900px;
+  padding: 50px 50px;
+}
 
-    <form action="https://formspree.io/f/xxxxabcd" method="POST" class="contact-form">
+/* Intro spacing */
+.contact-intro {
+  margin-bottom: 30px;
+}
 
-      <div class="form-row">
-        <div class="form-group">
-          <label>Name <span>*</span></label>
-          <input type="text"
-                 name="name"
-                 placeholder="Your full name"
-                 required
-                 oninvalid="this.setCustomValidity('Please enter your full name.')"
-                 oninput="this.setCustomValidity('')">
-        </div>
+/* Form container */
+.contact-form {
+  max-width: 760px;
+  margin: auto;
+}
 
-        <div class="form-group">
-          <label>Phone (optional)</label>
-          <input type="tel"
-                 name="phone"
-                 placeholder="+44 …">
-        </div>
-      </div>
+/* Two-column row */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 26px;
+}
 
-      <div class="form-group">
-        <label>Email <span>*</span></label>
-        <input type="email"
-               name="email"
-               placeholder="your@email.com"
-               required
-               oninvalid="this.setCustomValidity('Please ent
+/* Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+}
+
+/* Labels */
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.form-group label span {
+  color: #5f8d6a;
+}
+
+/* Inputs */
+.contact-form input,
+.contact-form textarea {
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #cfcfcf;
+  font-size: 0.95em;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Textarea */
+.contact-form textarea {
+  min-height: 170px;
+  resize: vertical;
+}
+
+/* Focus state */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #5f8d6a;
+  box-shadow: 0 0 0 3px rgba(95,141,106,0.15);
+}
+
+/* Small note */
+.contact-form small {
+  margin-top: 8px;
+  color: #777;
+  font-size: 0.82em;
+}
+
+/* Button alignment */
+.form-actions {
+  margin-top: 30px;
+  text-align: right;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .contact-card {
+    padding: 35px 25px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    text-align: center;
+  }
+}
 
   </div>
+
 </section>
 
   </div>
