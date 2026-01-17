@@ -396,15 +396,24 @@ community-focused environments.
                required
                oninvalid="this.setCustomValidity('Please ent
 
- </div>
-</section>
 
- </div>
-</section>
 
 <footer>
  © 2026 Kasun Deeptha Boralugoda · Built with care
 </footer>
+<script>
+  document.querySelectorAll('.accordion-header').forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
