@@ -261,34 +261,40 @@
     <p>Please feel free to get in touch.</p>
 
     <!-- 🔗 Replace with your real Formspree form URL -->
-    <form action="https://formspree.io/f/xgoooqdb" method="POST">
+<section id="contact">
+  <div class="card contact-card">
+    <h2>Contact</h2>
+    <p class="contact-intro">Please feel free to get in touch.</p>
 
-      <label>
-        Name <span style="color:#5f8d6a">*</span>
-        <input type="text" name="name" required placeholder="Your full name">
-      </label>
+    <form action="https://formspree.io/f/xxxxabcd" method="POST" class="contact-form">
 
-      <label>
-        Phone (optional)
-        <input type="tel" name="phone" placeholder="+44 …">
-      </label>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Name <span>*</span></label>
+          <input type="text"
+                 name="name"
+                 placeholder="Your full name"
+                 required
+                 oninvalid="this.setCustomValidity('Please enter your full name.')"
+                 oninput="this.setCustomValidity('')">
+        </div>
 
-      <label>
-        Email <span style="color:#5f8d6a">*</span>
-        <input type="email" name="email" required placeholder="your@email.com">
-      </label>
+        <div class="form-group">
+          <label>Phone (optional)</label>
+          <input type="tel"
+                 name="phone"
+                 placeholder="+44 …">
+        </div>
+      </div>
 
-      <label>
-        Message <span style="color:#5f8d6a">*</span>
-        <textarea name="message"
-                  required
-                  maxlength="750"
-                  placeholder="Write your message (max 750 characters)"></textarea>
-        <small>Maximum 750 characters</small>
-      </label>
+      <div class="form-group">
+        <label>Email <span>*</span></label>
+        <input type="email"
+               name="email"
+               placeholder="your@email.com"
+               required
+               oninvalid="this.setCustomValidity('Please ent
 
-      <button type="submit" class="button">Send Message</button>
-    </form>
   </div>
 </section>
 
