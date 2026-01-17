@@ -16,6 +16,43 @@ background: #f7f9f8;
 color: #2e2e2e;
 line-height: 1.7;
 }
+/* Accordion styles */
+.accordion {
+  margin-top: 20px;
+}
+
+.accordion-header {
+  width: 100%;
+  background: #eef3f1;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  font-size: 1em;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+  background: #5f8d6a;
+  color: white;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 0 18px;
+  transition: max-height 0.35s ease;
+}
+
+.accordion-content p {
+  margin: 16px 0;
+}
+
 
 header {
 display: flex;
@@ -177,14 +214,45 @@ I value dignity, trust, and long-term contribution to people and society.
 </section>
 
 <section id="education">
-<div class="card">
-<h2>Education</h2>
-<ul>
-<li><strong>Care</strong> – UK-aligned training and practice</li>
-<li><strong>BSc</strong> – Analytical and scientific foundation</li>
-<li><strong>MBA</strong> – Leadership, systems, and ethical decision-making</li>
-</ul>
-</div>
+  <div class="card">
+    <h2>Education</h2>
+
+    <div class="accordion">
+
+      <button class="accordion-header">
+        Care – UK-aligned training and practice
+      </button>
+      <div class="accordion-content">
+        <p>
+          Practical UK-aligned care training focused on dignity, safeguarding,
+          person-centred support, and working effectively with individuals
+          and families in care settings.
+        </p>
+      </div>
+
+      <button class="accordion-header">
+        BSc – Analytical and scientific foundation
+      </button>
+      <div class="accordion-content">
+        <p>
+          Developed strong analytical, problem-solving, and scientific thinking
+          skills, supporting evidence-based decisions and structured approaches
+          to complex challenges.
+        </p>
+      </div>
+
+      <button class="accordion-header">
+        MBA – Leadership, systems, and ethical decision-making
+      </button>
+      <div class="accordion-content">
+        <p>
+          Focused on leadership, organisational systems, ethical decision-making,
+          and managing people and processes responsibly within complex environments.
+        </p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <section id="community">
