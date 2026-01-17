@@ -250,10 +250,48 @@
   <div class="card">
     <h2>Contact</h2>
     <p>Let’s connect professionally.</p>
-    <a class="button" href="#"
+    <!--<a class="button" href="#"
        onclick="alert('Contact form can be added with Formspree');">
       Send a Message
-    </a>
+    </a>-->
+
+    <section id="contact">
+  <div class="card">
+    <h2>Contact</h2>
+    <p>Please feel free to get in touch.</p>
+
+    <!-- 🔗 Replace with your real Formspree form URL -->
+    <form action="https://formspree.io/f/xgoooqdb" method="POST">
+
+      <label>
+        Name <span style="color:#5f8d6a">*</span>
+        <input type="text" name="name" required placeholder="Your full name">
+      </label>
+
+      <label>
+        Phone (optional)
+        <input type="tel" name="phone" placeholder="+44 …">
+      </label>
+
+      <label>
+        Email <span style="color:#5f8d6a">*</span>
+        <input type="email" name="email" required placeholder="your@email.com">
+      </label>
+
+      <label>
+        Message <span style="color:#5f8d6a">*</span>
+        <textarea name="message"
+                  required
+                  maxlength="750"
+                  placeholder="Write your message (max 750 characters)"></textarea>
+        <small>Maximum 750 characters</small>
+      </label>
+
+      <button type="submit" class="button">Send Message</button>
+    </form>
+  </div>
+</section>
+
   </div>
 </section>
 
