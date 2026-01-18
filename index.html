@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+/* ========== BASE ========== */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -17,11 +18,102 @@ body {
   line-height: 1.7;
 }
 
-/* Accordion styles */
-.accordion {
-  margin-top: 20px;
+/* ========== LAYOUT ========== */
+.hero {
+  display: grid;
+  grid-template-columns: 38% 62%;
+  min-height: 100vh;
 }
 
+/* ========== LEFT PANEL ========== */
+.left-panel {
+  padding: 50px 40px;
+  background: linear-gradient(to bottom, #eef3f1, #f7f9f8);
+}
+
+.left-panel img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  margin-bottom: 25px;
+}
+
+.left-panel h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4em;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #5f8d6a;
+  font-size: 1.05em;
+  margin-bottom: 12px;
+}
+
+.meta {
+  font-size: 0.95em;
+  margin-bottom: 6px;
+}
+
+/* ========== NAV BUTTONS ========== */
+.nav-buttons {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-buttons button {
+  border: none;
+  background: #eef3f1;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+}
+
+.nav-buttons button:hover,
+.nav-buttons button.active {
+  background: #5f8d6a;
+  color: white;
+}
+
+/* ========== RIGHT PANEL ========== */
+.right-panel {
+  padding: 50px;
+  background: #ffffff;
+  border-left: 1px solid #eee;
+}
+
+/* Content panels */
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
+
+/* Cards */
+.card {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* Headings */
+h2 {
+  font-family: 'Playfair Display', serif;
+  color: #5f8d6a;
+  margin-bottom: 15px;
+}
+
+/* Accordion */
 .accordion-header {
   width: 100%;
   background: #eef3f1;
@@ -29,124 +121,19 @@ body {
   border-radius: 10px;
   padding: 16px 18px;
   margin-bottom: 12px;
-  font-size: 1em;
   font-weight: 500;
   text-align: left;
   cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.accordion-header:hover {
-  background: #5f8d6a;
-  color: white;
 }
 
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  background: #ffffff;
-  border-radius: 10px;
   padding: 0 18px;
   transition: max-height 0.35s ease;
 }
 
-.accordion-content p {
-  margin: 16px 0;
-}
-
-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-  background: linear-gradient(to right, #eef3f1, #f7f9f8);
-}
-
-/* Commented previous CSS
-header img {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-} */
-
-  /* CSS for complete photo */
-  header img {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  object-position: center top; /* 🔑 THIS fixes the crop */
-  border-radius: 50%;
-  margin: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.hero-text {
-  max-width: 500px;
-  margin: 20px;
-}
-
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.6em;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  font-size: 1.1em;
-  color: #5f8d6a;
-  margin-bottom: 10px;
-}
-
-nav {
-  text-align: center;
-  padding: 20px;
-  background: #ffffff;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-nav a {
-  margin: 6px;
-  padding: 10px 16px;
-  text-decoration: none;
-  color: #2e2e2e;
-  border-radius: 20px;
-  background: #eef3f1;
-  font-size: 0.9em;
-  transition: all 0.3s ease;
-}
-
-nav a:hover {
-  background: #5f8d6a;
-  color: white;
-}
-
-section {
-  max-width: 900px;
-  margin: auto;
-  padding: 60px 20px;
-}
-
-h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 15px;
-  color: #5f8d6a;
-}
-
-.card {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-  margin-bottom: 30px;
-}
-
+/* YouTube */
 iframe {
   width: 100%;
   height: 420px;
@@ -154,13 +141,7 @@ iframe {
   border: none;
 }
 
-footer {
-  text-align: center;
-  padding: 40px;
-  font-size: 0.85em;
-  color: #777;
-}
-
+/* Buttons */
 .button {
   display: inline-block;
   margin-top: 15px;
@@ -169,182 +150,119 @@ footer {
   color: white;
   text-decoration: none;
   border-radius: 25px;
-  transition: background 0.3s;
 }
 
-.button:hover {
-  background: #4a7258;
-}
+/* ========== MOBILE ========== */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
 
-.youtube-buttons {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  .right-panel {
+    border-left: none;
+  }
+
+  .left-panel {
+    text-align: center;
+  }
+
+  .nav-buttons {
+    justify-content: center;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <img src="Photo_2.jpg" alt="Kasun Deeptha Boralugoda">
-  <div class="hero-text">
+<div class="hero">
+
+  <!-- LEFT -->
+  <aside class="left-panel">
+    <img src="Photo_2.jpg" alt="Kasun Deeptha Boralugoda">
+
     <h1>Kasun Boralugoda</h1>
     <div class="subtitle">Care Professional · Technologist · Community Contributor</div>
-    <p><strong>Qualifications:</strong> Care | BSc | MBA</p>
-    <p>United Kingdom · Compassion · Knowledge · Contribution</p>
-  </div>
-</header>
+    <div class="meta"><strong>Qualifications:</strong> Care | BSc | MBA</div>
+    <div class="meta">United Kingdom · Compassion · Knowledge · Contribution</div>
 
-<nav>
-  <a href="#profile">Profile</a>
-  <a href="#education">Education</a>
-  <a href="#community">Community</a>
-  <a href="#uk">UK Contribution</a>
-  <a href="#innovation">Innovations</a>
-  <a href="#achievements">Achievements</a>
-  <a href="#youtube">YouTube</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<section id="profile">
-  <div class="card">
-    <h2>Profile</h2>
-    <p>
-      A calm, responsible professional with a strong foundation in care, science, and management.
-      I value dignity, trust, and long-term contribution to people and society.
-    </p>
-  </div>
-</section>
-
-<section id="education">
-  <div class="card">
-    <h2>Education</h2>
-
-    <div class="accordion">
-      <button class="accordion-header">Care – UK-aligned training and practice</button>
-      <div class="accordion-content">
-        <p>
-          Practical UK-aligned care training focused on dignity, safeguarding,
-          person-centred support, and working effectively with individuals and families.
-        </p>
-      </div>
-
-      <button class="accordion-header">BSc – Analytical and scientific foundation</button>
-      <div class="accordion-content">
-        <p>
-          Developed strong analytical and scientific thinking to support structured,
-          evidence-based decision-making.
-        </p>
-      </div>
-
-      <button class="accordion-header">MBA – Leadership, systems, and ethical decision-making</button>
-      <div class="accordion-content">
-        <p>
-          Focused on leadership, organisational systems, ethics, and responsible
-          management of people and processes.
-        </p>
-      </div>
+    <div class="nav-buttons">
+      <button class="active" onclick="showPanel('profile', this)">Profile</button>
+      <button onclick="showPanel('education', this)">Education</button>
+      <button onclick="showPanel('community', this)">Community</button>
+      <button onclick="showPanel('uk', this)">UK Contribution</button>
+      <button onclick="showPanel('innovation', this)">Innovations</button>
+      <button onclick="showPanel('achievements', this)">Achievements</button>
+      <button onclick="showPanel('youtube', this)">YouTube</button>
+      <button onclick="showPanel('contact', this)">Contact</button>
     </div>
-  </div>
-</section>
+  </aside>
 
-<section id="community">
-  <div class="card">
-    <h2>Community</h2>
-    <p>
-      Active in volunteering and community engagement, with a strong commitment to inclusion,
-      safeguarding, and respectful support.
-    </p>
-  </div>
-</section>
+  <!-- RIGHT -->
+  <main class="right-panel">
 
-<section id="uk">
-  <div class="card">
-    <h2>UK Contribution</h2>
-    <p>
-      Living and contributing in the UK through care work, community participation,
-      and responsible professional practice.
-    </p>
-  </div>
-</section>
+    <section id="profile" class="panel active">
+      <div class="card">
+        <h2>Profile</h2>
+        <p>A calm, responsible professional with a strong foundation in care, science, and management.</p>
+      </div>
+    </section>
 
-<section id="innovation">
-  <div class="card">
-    <h2>Innovations</h2>
-    <p>
-      Exploring ethical, human-first innovation at the intersection of care and technology.
-    </p>
-  </div>
-</section>
+    <section id="education" class="panel">
+      <div class="card">
+        <h2>Education</h2>
 
-<section id="achievements">
-  <div class="card">
-    <h2>Achievements</h2>
-    <p>
-      Academic qualifications, professional transitions, and trusted roles in care
-      and community-focused environments.
-    </p>
-  </div>
-</section>
+        <button class="accordion-header">Care – UK-aligned training</button>
+        <div class="accordion-content"><p>Person-centred, safeguarding-focused care practice.</p></div>
 
-<section id="youtube">
-  <div class="card">
-    <h2>YouTube</h2>
-    <p>
-    This track was played on BBC Cymru.
-    </p>
+        <button class="accordion-header">BSc – Analytical foundation</button>
+        <div class="accordion-content"><p>Scientific and evidence-based thinking.</p></div>
 
-<iframe src="https://www.youtube.com/embed/cZR0GTwygi4" allowfullscreen></iframe>
+        <button class="accordion-header">MBA – Leadership & ethics</button>
+        <div class="accordion-content"><p>Responsible leadership and systems thinking.</p></div>
+      </div>
+    </section>
 
-    <div class="youtube-buttons">
-      <a class="button" href="https://www.youtube.com/@Iamjustasong/" target="_blank">🎵 I Am Just a Song</a>
-      <a class="button" href="https://www.youtube.com/@UK4NATIONS" target="_blank">🏴 UK4NATIONS</a>
-    </div>
-  </div>
-</section>
+    <section id="youtube" class="panel">
+      <div class="card">
+        <h2>YouTube</h2>
+        <p>This track was played on BBC Cymru.</p>
+        <iframe src="https://www.youtube.com/embed/cZR0GTwygi4" allowfullscreen></iframe>
+      </div>
+    </section>
 
-<section id="contact">
-  <div class="card">
-    <h2>Contact</h2>
-    <p>I’d be happy to connect and explore how we can work together.</p>
+    <section id="contact" class="panel">
+      <div class="card">
+        <h2>Contact</h2>
+        <form action="https://formspree.io/f/xgoooqdb" method="POST">
+          <input name="name" placeholder="Name" required><br><br>
+          <input name="email" type="email" placeholder="Email" required><br><br>
+          <textarea name="message" placeholder="Message" required></textarea><br><br>
+          <button class="button">Send</button>
+        </form>
+      </div>
+    </section>
 
-    <form action="https://formspree.io/f/xgoooqdb" method="POST">
-      <label>Name *<br>
-        <input type="text" name="name" required>
-      </label><br><br>
-
-      <label>Phone (optional)<br>
-        <input type="tel" name="phone">
-      </label><br><br>
-
-      <label>Email *<br>
-        <input type="email" name="email" required>
-      </label><br><br>
-
-      <label>Message *<br>
-        <textarea name="message" required maxlength="750"></textarea>
-      </label><br><br>
-
-      <button type="submit" class="button">Send Message</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  © 2026 Kasun Deeptha Boralugoda · Built with care
-</footer>
+  </main>
+</div>
 
 <script>
-  document.querySelectorAll('.accordion-header').forEach(button => {
-    button.addEventListener('click', () => {
-      const content = button.nextElementSibling;
-      content.style.maxHeight = content.style.maxHeight
-        ? null
-        : content.scrollHeight + 'px';
-    });
-  });
+/* Panel switch */
+function showPanel(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+
+  document.querySelectorAll('.nav-buttons button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+/* Accordion */
+document.querySelectorAll('.accordion-header').forEach(btn => {
+  btn.onclick = () => {
+    const c = btn.nextElementSibling;
+    c.style.maxHeight = c.style.maxHeight ? null : c.scrollHeight + "px";
+  };
+});
 </script>
 
 </body>
