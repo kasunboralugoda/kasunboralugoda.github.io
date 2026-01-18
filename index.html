@@ -25,12 +25,13 @@ body {
   min-height: 100vh;
 }
 
-/* ========== LEFT PANEL (PROFILE) ========== */
+/* ========== LEFT PANEL ========== */
 .left-panel {
   padding: 50px 40px;
   background: linear-gradient(to bottom, #eef3f1, #f7f9f8);
 }
 
+/* Profile Image */
 .left-panel img {
   width: 220px;
   height: 220px;
@@ -38,22 +39,24 @@ body {
   object-position: center top;
   border-radius: 50%;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  margin-bottom: 25px;
+  display: block;
 }
 
-.left-panel h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.4em;
-  margin-bottom: 12px;
-}
-
-/* Role stack */
+/* FOUR TERMS (directly under image) */
 .role-stack {
+  max-width: 220px;            /* align with image width */
+  margin: 18px 0 32px auto;    /* push to right under image */
   text-align: right;
   color: #5f8d6a;
   font-size: 0.95em;
-  line-height: 1.9;
-  margin-bottom: 25px;
+  line-height: 1.8;
+}
+
+/* Name */
+.left-panel h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4em;
+  margin-bottom: 18px;
 }
 
 /* Profile summary */
@@ -93,7 +96,7 @@ body {
   color: white;
 }
 
-/* ========== RIGHT PANEL (CONTENT) ========== */
+/* ========== RIGHT PANEL ========== */
 .right-panel {
   padding: 50px;
   background: #ffffff;
@@ -178,6 +181,8 @@ iframe {
   }
 
   .role-stack {
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
   }
 
@@ -194,8 +199,10 @@ iframe {
 
   <!-- LEFT PANEL -->
   <aside class="left-panel">
+
     <img src="Photo_2.jpg" alt="Kasun Deeptha Boralugoda">
 
+    <!-- FOUR TERMS -->
     <div class="role-stack">
       <div>Care Professional</div>
       <div>Technology-Aware</div>
@@ -203,93 +210,10 @@ iframe {
       <div>Community Contributor</div>
     </div>
 
-     <h1>Kasun Boralugoda</h1>
+    <h1>Kasun Boralugoda</h1>
 
     <div class="profile-summary">
       <p><strong>Care Professional</strong> – UK-trained, person-centred, safeguarding-focused, committed to dignity, trust, and long-term support.</p>
       <p><strong>Technology-Aware</strong> – Innovative founder mindset, using appropriate technology to support people, systems, and ethical outcomes.</p>
       <p><strong>Public Communicator</strong> – Communicates through YouTube and community platforms to educate, inspire, and connect diverse audiences.</p>
-      <p><strong>Community Contributor</strong> – Actively building sustainable communities and a voluntary <strong>blood donor (42 times)</strong>.</p>
-    </div>
-
-    <div class="nav-buttons">
-      <button class="active" onclick="showPanel('education', this)">Education</button>
-      <button onclick="showPanel('community', this)">Community</button>
-      <button onclick="showPanel('uk', this)">UK Contribution</button>
-      <button onclick="showPanel('innovation', this)">Innovations</button>
-      <button onclick="showPanel('achievements', this)">Achievements</button>
-      <button onclick="showPanel('youtube', this)">YouTube</button>
-      <button onclick="showPanel('contact', this)">Contact</button>
-    </div>
-  </aside>
-
-  <!-- RIGHT PANEL -->
-  <main class="right-panel">
-
-    <section id="education" class="panel active">
-      <div class="card">
-        <h2>Education</h2>
-
-        <button class="accordion-header">Care – UK-aligned training</button>
-        <div class="accordion-content">
-          <p>Person-centred, safeguarding-focused care practice.</p>
-        </div>
-
-        <button class="accordion-header">BSc – Analytical foundation</button>
-        <div class="accordion-content">
-          <p>Scientific and evidence-based thinking.</p>
-        </div>
-
-        <button class="accordion-header">MBA – Leadership & ethics</button>
-        <div class="accordion-content">
-          <p>Responsible leadership and systems thinking.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="youtube" class="panel">
-      <div class="card">
-        <h2>YouTube</h2>
-        <p>This track was played on BBC Cymru.</p>
-        <iframe src="https://www.youtube.com/embed/cZR0GTwygi4" allowfullscreen></iframe>
-      </div>
-    </section>
-
-    <section id="contact" class="panel">
-      <div class="card">
-        <h2>Contact</h2>
-        <form action="https://formspree.io/f/xgoooqdb" method="POST">
-          <input name="name" placeholder="Name" required><br><br>
-          <input name="email" type="email" placeholder="Email" required><br><br>
-          <textarea name="message" placeholder="Message" required></textarea><br><br>
-          <button class="button">Send Message</button>
-        </form>
-      </div>
-    </section>
-
-  </main>
-</div>
-
-<script>
-/* Panel switching */
-function showPanel(id, btn) {
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-
-  document.querySelectorAll('.nav-buttons button').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-}
-
-/* Accordion */
-document.querySelectorAll('.accordion-header').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const content = btn.nextElementSibling;
-    content.style.maxHeight = content.style.maxHeight
-      ? null
-      : content.scrollHeight + "px";
-  });
-});
-</script>
-
-</body>
-</html>
+      <p><strong>Community Contributor</strong> – Actively building sustainable communities and a voluntary <strong>blood donor (4
