@@ -63,10 +63,22 @@ header {
   background: linear-gradient(to right, #eef3f1, #f7f9f8);
 }
 
+/* Commented previous CSS
 header img {
   width: 220px;
   height: 220px;
   object-fit: cover;
+  border-radius: 50%;
+  margin: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+} */
+
+  /* CSS for complete photo */
+  header img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  object-position: center top; /* 🔑 THIS fixes the crop */
   border-radius: 50%;
   margin: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
