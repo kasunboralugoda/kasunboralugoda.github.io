@@ -88,4 +88,208 @@ body {
   background: #eef3f1;
 }
 
-.nav-bu
+.nav-buttons button.active {
+  background: #5f8d6a;
+  color: white;
+}
+
+/* ========== RIGHT PANEL (CONTENT) ========== */
+.right-panel {
+  padding: 50px;
+  background: #ffffff;
+  border-left: 1px solid #eee;
+}
+
+/* Panels */
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
+
+/* Card */
+.card {
+  background: white;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* Headings */
+h2 {
+  font-family: 'Playfair Display', serif;
+  color: #5f8d6a;
+  margin-bottom: 15px;
+}
+
+/* Accordion */
+.accordion-header {
+  width: 100%;
+  background: #eef3f1;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 18px;
+  transition: max-height 0.35s ease;
+}
+
+/* YouTube */
+iframe {
+  width: 100%;
+  height: 420px;
+  border-radius: 12px;
+  border: none;
+}
+
+/* Contact button */
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #5f8d6a;
+  color: white;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ========== MOBILE ========== */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .right-panel {
+    border-left: none;
+  }
+
+  .left-panel {
+    text-align: center;
+  }
+
+  .role-stack {
+    text-align: center;
+  }
+
+  .nav-buttons {
+    justify-content: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+  <!-- LEFT PANEL -->
+  <aside class="left-panel">
+    <img src="Photo_2.jpg" alt="Kasun Deeptha Boralugoda">
+
+    <h1>Kasun Boralugoda</h1>
+
+    <div class="role-stack">
+      <div>Care Professional</div>
+      <div>Technology-Aware</div>
+      <div>Creative Public Communicator</div>
+      <div>Community Contributor</div>
+    </div>
+
+    <div class="profile-summary">
+      <p><strong>Care Professional</strong> – UK-trained, person-centred, safeguarding-focused, committed to dignity, trust, and long-term support.</p>
+      <p><strong>Technology-Aware</strong> – Innovative founder mindset, using appropriate technology to support people, systems, and ethical outcomes.</p>
+      <p><strong>Public Communicator</strong> – Communicates through YouTube and community platforms to educate, inspire, and connect diverse audiences.</p>
+      <p><strong>Community Contributor</strong> – Actively building sustainable communities and a voluntary <strong>blood donor (42 times)</strong>.</p>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="active" onclick="showPanel('education', this)">Education</button>
+      <button onclick="showPanel('community', this)">Community</button>
+      <button onclick="showPanel('uk', this)">UK Contribution</button>
+      <button onclick="showPanel('innovation', this)">Innovations</button>
+      <button onclick="showPanel('achievements', this)">Achievements</button>
+      <button onclick="showPanel('youtube', this)">YouTube</button>
+      <button onclick="showPanel('contact', this)">Contact</button>
+    </div>
+  </aside>
+
+  <!-- RIGHT PANEL -->
+  <main class="right-panel">
+
+    <section id="education" class="panel active">
+      <div class="card">
+        <h2>Education</h2>
+
+        <button class="accordion-header">Care – UK-aligned training</button>
+        <div class="accordion-content">
+          <p>Person-centred, safeguarding-focused care practice.</p>
+        </div>
+
+        <button class="accordion-header">BSc – Analytical foundation</button>
+        <div class="accordion-content">
+          <p>Scientific and evidence-based thinking.</p>
+        </div>
+
+        <button class="accordion-header">MBA – Leadership & ethics</button>
+        <div class="accordion-content">
+          <p>Responsible leadership and systems thinking.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="youtube" class="panel">
+      <div class="card">
+        <h2>YouTube</h2>
+        <p>This track was played on BBC Cymru.</p>
+        <iframe src="https://www.youtube.com/embed/cZR0GTwygi4" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section id="contact" class="panel">
+      <div class="card">
+        <h2>Contact</h2>
+        <form action="https://formspree.io/f/xgoooqdb" method="POST">
+          <input name="name" placeholder="Name" required><br><br>
+          <input name="email" type="email" placeholder="Email" required><br><br>
+          <textarea name="message" placeholder="Message" required></textarea><br><br>
+          <button class="button">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+/* Panel switching */
+function showPanel(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+
+  document.querySelectorAll('.nav-buttons button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+/* Accordion */
+document.querySelectorAll('.accordion-header').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const content = btn.nextElementSibling;
+    content.style.maxHeight = content.style.maxHeight
+      ? null
+      : content.scrollHeight + "px";
+  });
+});
+</script>
+
+</body>
+</html>
