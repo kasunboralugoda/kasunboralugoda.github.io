@@ -18,14 +18,14 @@ body {
   line-height: 1.7;
 }
 
-/* ========== LAYOUT ========== */
+/* ========== MAIN LAYOUT ========== */
 .hero {
   display: grid;
   grid-template-columns: 38% 62%;
   min-height: 100vh;
 }
 
-/* ========== LEFT PANEL ========== */
+/* ========== LEFT PANEL (PROFILE) ========== */
 .left-panel {
   padding: 50px 40px;
   background: linear-gradient(to bottom, #eef3f1, #f7f9f8);
@@ -44,226 +44,48 @@ body {
 .left-panel h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2.4em;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  color: #5f8d6a;
-  font-size: 1.05em;
   margin-bottom: 12px;
 }
 
-.meta {
+/* Role stack */
+.role-stack {
+  text-align: right;
+  color: #5f8d6a;
   font-size: 0.95em;
-  margin-bottom: 6px;
+  line-height: 1.9;
+  margin-bottom: 25px;
+}
+
+/* Profile summary */
+.profile-summary {
+  font-size: 0.92em;
+  margin-bottom: 35px;
+}
+
+.profile-summary p {
+  margin-bottom: 14px;
 }
 
 /* ========== NAV BUTTONS ========== */
 .nav-buttons {
-  margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
 .nav-buttons button {
-  border: none;
-  background: #eef3f1;
+  background: transparent;
+  border: 1.5px solid #5f8d6a;
+  color: #2e2e2e;
   padding: 10px 16px;
-  border-radius: 20px;
+  border-radius: 22px;
   cursor: pointer;
   font-size: 0.9em;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
-.nav-buttons button:hover,
-.nav-buttons button.active {
-  background: #5f8d6a;
-  color: white;
-}
-
-/* ========== RIGHT PANEL ========== */
-.right-panel {
-  padding: 50px;
-  background: #ffffff;
-  border-left: 1px solid #eee;
-}
-
-/* Content panels */
-.panel {
-  display: none;
-}
-
-.panel.active {
-  display: block;
-}
-
-/* Cards */
-.card {
-  background: #ffffff;
-  padding: 35px;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-}
-
-/* Headings */
-h2 {
-  font-family: 'Playfair Display', serif;
-  color: #5f8d6a;
-  margin-bottom: 15px;
-}
-
-/* Accordion */
-.accordion-header {
-  width: 100%;
+.nav-buttons button:hover {
   background: #eef3f1;
-  border: none;
-  border-radius: 10px;
-  padding: 16px 18px;
-  margin-bottom: 12px;
-  font-weight: 500;
-  text-align: left;
-  cursor: pointer;
 }
 
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 18px;
-  transition: max-height 0.35s ease;
-}
-
-/* YouTube */
-iframe {
-  width: 100%;
-  height: 420px;
-  border-radius: 12px;
-  border: none;
-}
-
-/* Buttons */
-.button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 20px;
-  background: #5f8d6a;
-  color: white;
-  text-decoration: none;
-  border-radius: 25px;
-}
-
-/* ========== MOBILE ========== */
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .right-panel {
-    border-left: none;
-  }
-
-  .left-panel {
-    text-align: center;
-  }
-
-  .nav-buttons {
-    justify-content: center;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<div class="hero">
-
-  <!-- LEFT -->
-  <aside class="left-panel">
-    <img src="Photo_2.jpg" alt="Kasun Deeptha Boralugoda">
-
-    <h1>Kasun Boralugoda</h1>
-    <div class="subtitle">Care Professional · Technologist · Community Contributor</div>
-    <div class="meta"><strong>Qualifications:</strong> Care | BSc | MBA</div>
-    <div class="meta">United Kingdom · Compassion · Knowledge · Contribution</div>
-
-    <div class="nav-buttons">
-      <button class="active" onclick="showPanel('profile', this)">Profile</button>
-      <button onclick="showPanel('education', this)">Education</button>
-      <button onclick="showPanel('community', this)">Community</button>
-      <button onclick="showPanel('uk', this)">UK Contribution</button>
-      <button onclick="showPanel('innovation', this)">Innovations</button>
-      <button onclick="showPanel('achievements', this)">Achievements</button>
-      <button onclick="showPanel('youtube', this)">YouTube</button>
-      <button onclick="showPanel('contact', this)">Contact</button>
-    </div>
-  </aside>
-
-  <!-- RIGHT -->
-  <main class="right-panel">
-
-    <section id="profile" class="panel active">
-      <div class="card">
-        <h2>Profile</h2>
-        <p>A calm, responsible professional with a strong foundation in care, science, and management.</p>
-      </div>
-    </section>
-
-    <section id="education" class="panel">
-      <div class="card">
-        <h2>Education</h2>
-
-        <button class="accordion-header">Care – UK-aligned training</button>
-        <div class="accordion-content"><p>Person-centred, safeguarding-focused care practice.</p></div>
-
-        <button class="accordion-header">BSc – Analytical foundation</button>
-        <div class="accordion-content"><p>Scientific and evidence-based thinking.</p></div>
-
-        <button class="accordion-header">MBA – Leadership & ethics</button>
-        <div class="accordion-content"><p>Responsible leadership and systems thinking.</p></div>
-      </div>
-    </section>
-
-    <section id="youtube" class="panel">
-      <div class="card">
-        <h2>YouTube</h2>
-        <p>This track was played on BBC Cymru.</p>
-        <iframe src="https://www.youtube.com/embed/cZR0GTwygi4" allowfullscreen></iframe>
-      </div>
-    </section>
-
-    <section id="contact" class="panel">
-      <div class="card">
-        <h2>Contact</h2>
-        <form action="https://formspree.io/f/xgoooqdb" method="POST">
-          <input name="name" placeholder="Name" required><br><br>
-          <input name="email" type="email" placeholder="Email" required><br><br>
-          <textarea name="message" placeholder="Message" required></textarea><br><br>
-          <button class="button">Send</button>
-        </form>
-      </div>
-    </section>
-
-  </main>
-</div>
-
-<script>
-/* Panel switch */
-function showPanel(id, btn) {
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-
-  document.querySelectorAll('.nav-buttons button').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-}
-
-/* Accordion */
-document.querySelectorAll('.accordion-header').forEach(btn => {
-  btn.onclick = () => {
-    const c = btn.nextElementSibling;
-    c.style.maxHeight = c.style.maxHeight ? null : c.scrollHeight + "px";
-  };
-});
-</script>
-
-</body>
-</html>
+.nav-bu
