@@ -28,8 +28,8 @@ body {
     border: 3px solid #2c7be5;
     margin-right: 20px;
 
-    object-fit: cover;        /* fills circle */
-    object-position: 50% 15%; /* keeps head visible */
+    object-fit: cover;
+    object-position: 50% 15%;
     background-color: #f6f8fb;
 }
 
@@ -61,7 +61,6 @@ body {
     margin: 0 auto;
 }
 
-/* SVG lines */
 .triangle-svg {
     position: absolute;
     inset: 0;
@@ -102,26 +101,26 @@ body {
     line-height: 1.5;
 }
 
-/* open state */
 .card.open .details {
     display: block;
 }
 
-/* positions */
+/* ================= POSITIONS ================= */
 .card.top {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
 }
 
+/* 🔧 ADJUSTED: moved UP + RIGHT */
 .card.left {
-    bottom: 0;
-    left: 0;
+    bottom: 40px;
+    left: 80px;
 }
 
 .card.right {
-    bottom: 0;
-    right: 0;
+    bottom: 40px;
+    right: 80px;
 }
 
 /* ================= MOBILE ================= */
@@ -201,7 +200,6 @@ body {
     </div>
 </div>
 
-<!-- SCRIPT -->
 <script>
 function toggleCard(card) {
     card.classList.toggle("open");
