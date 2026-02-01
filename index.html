@@ -6,6 +6,7 @@
 <title>Kasun Boralugoda | Care Portfolio</title>
 
 <style>
+/* ===== BASE ===== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -28,7 +29,7 @@ body {
   border-radius: 50%;
   border: 3px solid #2c7be5;
   object-fit: cover;
-  object-position: center top; /* ✅ HEAD FIX */
+  object-position: center top; /* head visible */
   margin-right: 18px;
 }
 
@@ -43,7 +44,7 @@ body {
   margin-top: 4px;
 }
 
-/* ===== SECTION ===== */
+/* ===== SECTIONS ===== */
 section {
   padding: 60px 20px;
   text-align: center;
@@ -54,31 +55,55 @@ section {
   margin-bottom: 35px;
 }
 
-/* ===== CARE CARDS ===== */
+/* ===== CARE GRID ===== */
 .care-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
   max-width: 900px;
   margin: 0 auto;
 }
 
+/* ===== CARE CARDS ===== */
 .care-card {
   background: #ffffff;
-  border-radius: 16px;
-  padding: 26px 22px;
+  border-radius: 18px;
+  padding: 26px 24px;
   box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: left;
+}
+
+.care-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.15);
 }
 
 .care-card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   font-size: 18px;
 }
 
-.care-card p {
+.care-summary {
   font-size: 14px;
   color: #555;
-  line-height: 1.5;
+}
+
+/* ===== EXPANDABLE DETAILS ===== */
+.care-details {
+  display: none;
+  margin-top: 14px;
+}
+
+.care-details p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.care-card.active .care-details {
+  display: block;
 }
 
 /* ===== FOOTER ===== */
@@ -95,7 +120,7 @@ section {
 
 <body>
 
-<!-- HEADER -->
+<!-- ===== HEADER ===== -->
 <div class="header">
   <img src="profile.jpg" alt="Profile photo" class="profile-pic">
   <div>
@@ -104,32 +129,77 @@ section {
   </div>
 </div>
 
-<!-- CARE EXPERIENCE -->
+<!-- ===== CARE SETTINGS ===== -->
 <section class="care-section">
   <h2>Care Settings Experience</h2>
 
   <div class="care-grid">
-    <div class="care-card">
+
+    <div class="care-card" onclick="toggleDetails(this)">
       <h3>Care Homes</h3>
-      <p>Residential and nursing care environments with a focus on dignity, safety, and wellbeing.</p>
+      <p class="care-summary">
+        Residential and nursing care environments.
+      </p>
+
+      <div class="care-details">
+        <p>
+          I have experience supporting individuals in residential and nursing
+          care settings, focusing on dignity, safety, and wellbeing. My work
+          includes assisting with daily living activities, following care plans,
+          and working closely with senior carers and nursing staff to provide
+          consistent, person-centred care.
+        </p>
+      </div>
     </div>
 
-    <div class="care-card">
+    <div class="care-card" onclick="toggleDetails(this)">
       <h3>Domiciliary Care</h3>
-      <p>Supporting individuals to live independently and safely in their own homes.</p>
+      <p class="care-summary">
+        Supporting individuals in their own homes.
+      </p>
+
+      <div class="care-details">
+        <p>
+          I support individuals in their own homes to live independently and
+          safely, providing one-to-one care tailored to their needs. This
+          includes assisting with daily routines, offering medication prompts,
+          and respecting privacy, choice, and independence in a familiar home
+          environment.
+        </p>
+      </div>
     </div>
 
-    <div class="care-card">
+    <div class="care-card" onclick="toggleDetails(this)">
       <h3>Day Centres</h3>
-      <p>Community-based support, engagement, and meaningful daily activities.</p>
+      <p class="care-summary">
+        Community-based support and engagement.
+      </p>
+
+      <div class="care-details">
+        <p>
+          I have experience supporting people in day centre settings by
+          encouraging social interaction, participation in group activities,
+          and emotional wellbeing. My role involves helping individuals stay
+          engaged, build confidence, and take part in meaningful daily
+          activities within the community.
+        </p>
+      </div>
     </div>
+
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <div class="footer">
   © 2026 Kasun Boralugoda · Care Portfolio
 </div>
+
+<!-- ===== SCRIPT ===== -->
+<script>
+function toggleDetails(card) {
+  card.classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
