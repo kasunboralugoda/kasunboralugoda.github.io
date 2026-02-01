@@ -50,7 +50,7 @@ section {
   text-align: center;
 }
 
-.care-section h2 {
+h2 {
   font-size: 28px;
   margin-bottom: 35px;
 }
@@ -64,34 +64,93 @@ section {
   margin: 0 auto;
 }
 
-/* ===== CARE CARD ===== */
-.care-card {
+/* ===== ACCORDION CARDS ===== */
+details.care-card {
   background: #ffffff;
   border-radius: 18px;
-  padding: 26px 24px;
+  padding: 22px 24px;
   box-shadow: 0 10px 22px rgba(0,0,0,0.12);
-  cursor: pointer;
   text-align: left;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease;
 }
 
-.care-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.15);
+details.care-card[open] {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.16);
 }
 
-.care-card h3 {
-  margin: 0 0 8px;
+summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary h3 {
+  margin: 0;
   font-size: 18px;
 }
 
-.care-summary {
+.summary-text {
   font-size: 14px;
   color: #555;
+  margin-top: 6px;
 }
 
-/* ===== EXPANDABLE DETAILS ===== */
-.care-details {
-  display: none;
+.details-text {
   margin-top: 14px;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
 }
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #ffffff;
+  padding: 22px;
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  border-top: 1px solid #e0e0e0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<div class="header">
+  <img src="profile.jpg" alt="Profile photo" class="profile-pic">
+  <div>
+    <div class="name">Kasun Boralugoda</div>
+    <div class="headline">Care | Innovation | Music | Community Impact</div>
+  </div>
+</div>
+
+<!-- ===== CARE EXPERIENCE ===== -->
+<section>
+  <h2>Care Settings Experience</h2>
+
+  <div class="care-grid">
+
+    <details class="care-card">
+      <summary>
+        <h3>Care Homes</h3>
+        <div class="summary-text">Residential and nursing care environments</div>
+      </summary>
+      <div class="details-text">
+        I have experience supporting individuals in residential and nursing
+        care settings, focusing on dignity, safety, and wellbeing. My work
+        includes assisting with daily living activities, following care plans,
+        and working closely with senior carers and nursing staff to provide
+        consistent, person-centred care.
+      </div>
+    </details>
+
+    <details class="care-card">
+      <summary>
+        <h3>Domiciliary Care</h3>
+        <div class="summary-text">Supporting individuals in their own homes</div>
+      </summary>
+      <div class="de
