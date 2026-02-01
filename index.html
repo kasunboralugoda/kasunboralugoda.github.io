@@ -137,7 +137,9 @@ summary h3 {
     <details class="care-card">
       <summary>
         <h3>Care Homes</h3>
-        <div class="summary-text">Residential and nursing care environments</div>
+        <div class="summary-text">
+          Residential and nursing care environments
+        </div>
       </summary>
       <div class="details-text">
         I have experience supporting individuals in residential and nursing
@@ -151,6 +153,51 @@ summary h3 {
     <details class="care-card">
       <summary>
         <h3>Domiciliary Care</h3>
-        <div class="summary-text">Supporting individuals in their own homes</div>
+        <div class="summary-text">
+          Supporting individuals in their own homes
+        </div>
       </summary>
-      <div class="de
+      <div class="details-text">
+        I support individuals in their own homes to live independently and
+        safely, providing one-to-one care tailored to their needs. This includes
+        assisting with daily routines, offering medication prompts, and
+        respecting privacy, choice, and independence in a familiar home
+        environment.
+      </div>
+    </details>
+
+    <details class="care-card">
+      <summary>
+        <h3>Day Centres</h3>
+        <div class="summary-text">
+          Community-based support and engagement
+        </div>
+      </summary>
+      <div class="details-text">
+        I have experience supporting people in day centre settings by
+        encouraging social interaction, participation in group activities, and
+        emotional wellbeing. My role involves helping individuals stay engaged,
+        build confidence, and take part in meaningful daily activities within
+        the community.
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  © 2026 Kasun Boralugoda · Care Portfolio
+</div>
+
+<!-- ===== FORCE ALL PANELS CLOSED ON LOAD ===== -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("details").forEach(d => {
+    d.removeAttribute("open");
+  });
+});
+</script>
+
+</body>
+</html>
