@@ -55,7 +55,7 @@ h2 {
   margin-bottom: 35px;
 }
 
-/* ===== CARE GRID ===== */
+/* ===== GRID ===== */
 .care-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -64,18 +64,13 @@ h2 {
   margin: 0 auto;
 }
 
-/* ===== ACCORDION CARDS ===== */
+/* ===== PANELS ===== */
 details.care-card {
   background: #ffffff;
   border-radius: 18px;
   padding: 22px 24px;
   box-shadow: 0 10px 22px rgba(0,0,0,0.12);
   text-align: left;
-  transition: box-shadow 0.25s ease;
-}
-
-details.care-card[open] {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.16);
 }
 
 summary {
@@ -137,48 +132,37 @@ summary h3 {
     <details class="care-card">
       <summary>
         <h3>Care Homes</h3>
-        <div class="summary-text">
-          Residential and nursing care environments
-        </div>
+        <div class="summary-text">Residential and nursing care environments</div>
       </summary>
       <div class="details-text">
         I have experience supporting individuals in residential and nursing
         care settings, focusing on dignity, safety, and wellbeing. My work
         includes assisting with daily living activities, following care plans,
-        and working closely with senior carers and nursing staff to provide
-        consistent, person-centred care.
+        and working closely with senior carers and nursing staff.
       </div>
     </details>
 
     <details class="care-card">
       <summary>
         <h3>Domiciliary Care</h3>
-        <div class="summary-text">
-          Supporting individuals in their own homes
-        </div>
+        <div class="summary-text">Supporting individuals in their own homes</div>
       </summary>
       <div class="details-text">
         I support individuals in their own homes to live independently and
-        safely, providing one-to-one care tailored to their needs. This includes
-        assisting with daily routines, offering medication prompts, and
-        respecting privacy, choice, and independence in a familiar home
-        environment.
+        safely, providing one-to-one care, daily routine support, and respecting
+        privacy and personal choice.
       </div>
     </details>
 
     <details class="care-card">
       <summary>
         <h3>Day Centres</h3>
-        <div class="summary-text">
-          Community-based support and engagement
-        </div>
+        <div class="summary-text">Community-based support and engagement</div>
       </summary>
       <div class="details-text">
-        I have experience supporting people in day centre settings by
-        encouraging social interaction, participation in group activities, and
-        emotional wellbeing. My role involves helping individuals stay engaged,
-        build confidence, and take part in meaningful daily activities within
-        the community.
+        I support people in day centre settings by encouraging social
+        interaction, participation in group activities, and emotional wellbeing
+        within the community.
       </div>
     </details>
 
@@ -190,11 +174,11 @@ summary h3 {
   © 2026 Kasun Boralugoda · Care Portfolio
 </div>
 
-<!-- ===== FORCE ALL PANELS CLOSED ON LOAD ===== -->
+<!-- ===== SAFETY SCRIPT (RESET ON LOAD ONLY) ===== -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("details").forEach(d => {
-    d.removeAttribute("open");
+  document.querySelectorAll("details").forEach(panel => {
+    panel.removeAttribute("open");
   });
 });
 </script>
