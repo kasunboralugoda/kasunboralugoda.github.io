@@ -42,21 +42,11 @@ body {
   display: block;
 }
 
-/* FOUR TERMS (directly under image) */
-.role-stack {
-  max-width: 220px;            /* align with image width */
-  margin: 18px 0 32px auto;    /* push to right under image */
-  text-align: right;
-  color: #5f8d6a;
-  font-size: 0.95em;
-  line-height: 1.8;
-}
-
 /* Name */
 .left-panel h1 {
   font-family: 'Playfair Display', serif;
   font-size: 2.4em;
-  margin-bottom: 18px;
+  margin: 22px 0 18px;
 }
 
 /* Profile summary */
@@ -118,6 +108,7 @@ body {
   padding: 35px;
   border-radius: 14px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  margin-bottom: 40px;
 }
 
 /* Headings */
@@ -155,15 +146,56 @@ iframe {
   border: none;
 }
 
-/* Contact button */
-.button {
-  display: inline-block;
-  padding: 12px 20px;
-  background: #5f8d6a;
-  color: white;
-  border-radius: 25px;
-  border: none;
-  cursor: pointer;
+/* ========== CARE TRIANGLE ========== */
+.care-triangle-section {
+  margin-bottom: 50px;
+}
+
+.care-triangle {
+  position: relative;
+  max-width: 520px;
+  margin: 40px auto;
+  height: 420px;
+}
+
+.triangle-card {
+  position: absolute;
+  background: #fff;
+  padding: 16px 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  width: 220px;
+  font-size: 0.9em;
+}
+
+.triangle-card strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Positions */
+.triangle-top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.triangle-left {
+  bottom: 0;
+  left: 0;
+}
+
+.triangle-right {
+  bottom: 0;
+  right: 0;
+}
+
+/* Lines */
+.triangle-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
 /* ========== MOBILE ========== */
@@ -180,14 +212,22 @@ iframe {
     text-align: center;
   }
 
-  .role-stack {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-
   .nav-buttons {
     justify-content: center;
+  }
+
+  .care-triangle {
+    height: auto;
+  }
+
+  .triangle-card {
+    position: static;
+    width: auto;
+    margin-bottom: 20px;
+  }
+
+  .triangle-lines {
+    display: none;
   }
 }
 </style>
@@ -199,55 +239,70 @@ iframe {
 
   <!-- LEFT PANEL -->
   <aside class="left-panel">
-
-    <img src="Photo_2.jpg" alt="Kasun Deeptha Boralugoda">
-
-    <!-- FOUR TERMS -->
-    <div class="role-stack">
-    <!--<div class="role-stack">
-      <div>Care Professional</div>
-      <div>Technology-Aware</div>
-      <div>Creative Public Communicator</div>
-      <div>Community Contributor</div>
-    </div>
-    </div>-->
+    <img src="profile.jpg" alt="Kasun Boralugoda">
 
     <h1>Kasun Boralugoda</h1>
 
     <div class="profile-summary">
-      <p><strong>Care Professional</strong> – UK-trained, person-centred, safeguarding-focused, committed to dignity, trust, and long-term support.</p>
-      <p><strong>Technology-Aware</strong> – Innovative founder mindset, using appropriate technology to support people, systems, and ethical outcomes.</p>
-      <p><strong>Public Communicator</strong> – Communicates through YouTube and community platforms to educate, inspire, and connect diverse audiences.</p>
-      <p><strong>Community Contributor</strong> – Actively building sustainable communities and a voluntary <strong>blood donor (42 times)</strong>.</p>
+      <p><strong>Care Professional</strong> – UK-trained, person-centred, safeguarding-focused.</p>
+      <p><strong>Technology-Aware</strong> – Applying ethical, practical innovation.</p>
+      <p><strong>Public Communicator</strong> – Sharing knowledge through YouTube.</p>
+      <p><strong>Community Contributor</strong> – Voluntary blood donor (42 times).</p>
     </div>
 
     <div class="nav-buttons">
       <button class="active" onclick="showPanel('education', this)">Education</button>
-      <button onclick="showPanel('community', this)">Community</button>
-      <button onclick="showPanel('uk', this)">UK Contribution</button>
-      <button onclick="showPanel('innovation', this)">Innovations</button>
-      <button onclick="showPanel('achievements', this)">Achievements</button>
       <button onclick="showPanel('youtube', this)">YouTube</button>
       <button onclick="showPanel('contact', this)">Contact</button>
     </div>
-
   </aside>
 
   <!-- RIGHT PANEL -->
   <main class="right-panel">
 
+    <!-- TRIANGLE SECTION -->
+    <section class="care-triangle-section">
+      <h2 style="text-align:center;">Care Settings Experience</h2>
+
+      <div class="care-triangle">
+
+        <svg class="triangle-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <line x1="50" y1="10" x2="10" y2="90" stroke="#5f8d6a" stroke-width="2"/>
+          <line x1="50" y1="10" x2="90" y2="90" stroke="#5f8d6a" stroke-width="2"/>
+          <line x1="10" y1="90" x2="90" y2="90" stroke="#5f8d6a" stroke-width="2"/>
+        </svg>
+
+        <div class="triangle-card triangle-top">
+          <strong>Care Homes</strong>
+          Residential & nursing care
+        </div>
+
+        <div class="triangle-card triangle-left">
+          <strong>Domiciliary Care</strong>
+          Care in own homes
+        </div>
+
+        <div class="triangle-card triangle-right">
+          <strong>Day Centres</strong>
+          Community engagement
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
     <section id="education" class="panel active">
       <div class="card">
         <h2>Education</h2>
 
         <button class="accordion-header">Care – UK-aligned training</button>
         <div class="accordion-content">
-          <p>Person-centred, safeguarding-focused care practice.</p>
+          <p>Person-centred and safeguarding-focused practice.</p>
         </div>
 
         <button class="accordion-header">BSc – Analytical foundation</button>
         <div class="accordion-content">
-          <p>Scientific and evidence-based thinking.</p>
+          <p>Evidence-based and structured thinking.</p>
         </div>
 
         <button class="accordion-header">MBA – Leadership & ethics</button>
@@ -257,14 +312,15 @@ iframe {
       </div>
     </section>
 
+    <!-- YOUTUBE -->
     <section id="youtube" class="panel">
       <div class="card">
         <h2>YouTube</h2>
-        <p>This track was played on BBC Cymru.</p>
         <iframe src="https://www.youtube.com/embed/cZR0GTwygi4" allowfullscreen></iframe>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="panel">
       <div class="card">
         <h2>Contact</h2>
@@ -281,7 +337,6 @@ iframe {
 </div>
 
 <script>
-/* Panel switching */
 function showPanel(id, btn) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
@@ -290,7 +345,6 @@ function showPanel(id, btn) {
   btn.classList.add('active');
 }
 
-/* Accordion */
 document.querySelectorAll('.accordion-header').forEach(btn => {
   btn.addEventListener('click', () => {
     const content = btn.nextElementSibling;
