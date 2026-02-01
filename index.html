@@ -2,185 +2,142 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Care Innovation Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kasun Boralugoda | Care Portfolio</title>
+
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #f5f7fa;
-        overflow-x: hidden;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #222;
+}
 
-    /* Background job titles */
-    .background-text {
-        position: fixed;
-        inset: 0;
-        z-index: 0;
-        opacity: 0.06;
-        font-size: 48px;
-        font-weight: bold;
-        display: grid;
-        place-items: center;
-        text-align: center;
-        pointer-events: none;
-    }
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
 
-    .background-text span {
-        display: block;
-        line-height: 1.6;
-    }
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #2c7be5;
+  object-fit: cover;
+  margin-right: 16px;
+}
 
-    /* Header */
-    .header {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        align-items: center;
-        padding: 20px;
-    }
+.name {
+  font-size: 24px;
+  font-weight: bold;
+}
 
-    .profile-pic {
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-right: 15px;
-        border: 3px solid #2c7be5;
-    }
+.headline {
+  font-size: 14px;
+  color: #555;
+  margin-top: 4px;
+}
 
-    .name {
-        font-size: 24px;
-        font-weight: bold;
-    }
+/* Section wrapper */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
 
-    .headline {
-        font-size: 14px;
-        color: #555;
-    }
+/* Care section */
+.care-section h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
 
-    /* Main star section */
-    .star-container {
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        height: 520px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.care-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-    .center {
-        position: absolute;
-        width: 280px;
-        height: 160px;
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+.care-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
 
-    iframe {
-        width: 100%;
-        height: 100%;
-        border-radius: 12px;
-    }
+.care-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
 
-    .branch {
-        position: absolute;
-        text-align: center;
-        width: 180px;
-    }
+.care-card h3 {
+  margin: 15px 0 6px;
+}
 
-    .branch img {
-        width: 100%;
-        height: 110px;
-        object-fit: cover;
-        border-radius: 10px;
-        box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-    }
+.care-card p {
+  font-size: 14px;
+  color: #555;
+}
 
-    .branch h3 {
-        margin: 8px 0 0;
-        font-size: 16px;
-    }
-
-    /* Branch positions */
-    .care-homes { top: 40px; left: 50%; transform: translateX(-50%); }
-    .dom-care { bottom: 40px; left: 25%; }
-    .day-centres { bottom: 40px; right: 25%; }
-
-    /* Lines */
-    .line {
-        position: absolute;
-        width: 2px;
-        background: #2c7be5;
-        height: 120px;
-    }
-
-    .line-top { top: 160px; }
-    .line-left {
-        transform: rotate(-35deg);
-        bottom: 200px;
-        left: 42%;
-        height: 140px;
-    }
-    .line-right {
-        transform: rotate(35deg);
-        bottom: 200px;
-        right: 42%;
-        height: 140px;
-    }
+/* Footer */
+.footer {
+  background: #ffffff;
+  padding: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  border-top: 1px solid #e0e0e0;
+}
 </style>
 </head>
 
 <body>
 
-<div class="background-text">
-    <span>Care Worker • Support Worker • Assistant Carer</span>
-    <span>Senior Carer • Care Assistant • Community Support</span>
-</div>
-
+<!-- Header -->
 <div class="header">
-    <img src="profile.jpg" alt="Profile" class="profile-pic">
-    <div>
-        <div class="name">Kasun Boralugoda</div>
-        <div class="headline">Care | Innovation | Music | Community Impact</div>
-    </div>
+  <img src="profile.jpg" alt="Profile photo" class="profile-pic">
+  <div>
+    <div class="name">Kasun Boralugoda</div>
+    <div class="headline">Care | Innovation | Music | Community Impact</div>
+  </div>
 </div>
 
-<div class="star-container">
+<!-- Care Experience -->
+<section class="care-section">
+  <h2>Care Settings Experience</h2>
 
-    <!-- Connecting lines -->
-    <div class="line line-top"></div>
-    <div class="line line-left"></div>
-    <div class="line line-right"></div>
+  <div class="care-grid">
 
-    <!-- Centre YouTube -->
-    <div class="center">
-        <iframe 
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-            allowfullscreen>
-        </iframe>
+    <div class="care-card">
+      <img src="care-homes.jpg" alt="Care Homes">
+      <h3>Care Homes</h3>
+      <p>Residential and nursing care environments</p>
     </div>
 
-    <!-- Branches -->
-    <div class="branch care-homes">
-        <img src="care-homes.jpg" alt="Care Homes">
-        <h3>Care Homes</h3>
+    <div class="care-card">
+      <img src="dom-care.jpg" alt="Domiciliary Care">
+      <h3>Domiciliary Care</h3>
+      <p>Supporting individuals in their own homes</p>
     </div>
 
-    <div class="branch dom-care">
-        <img src="dom-care.jpg" alt="Domiciliary Care">
-        <h3>Domiciliary Care</h3>
+    <div class="care-card">
+      <img src="day-centres.jpg" alt="Day Centres">
+      <h3>Day Centres</h3>
+      <p>Community-based support and engagement</p>
     </div>
 
-    <div class="branch day-centres">
-        <img src="day-centres.jpg" alt="Day Centres">
-        <h3>Day Centres</h3>
-    </div>
+  </div>
+</section>
 
+<!-- Footer -->
+<div class="footer">
+  © 2026 Kasun Boralugoda · Care Portfolio
 </div>
 
 </body>
