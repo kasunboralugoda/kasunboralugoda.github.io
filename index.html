@@ -6,7 +6,6 @@
 <title>Kasun Boralugoda | Care Portfolio</title>
 
 <style>
-/* ===== BASE ===== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -29,7 +28,7 @@ body {
   border-radius: 50%;
   border: 3px solid #2c7be5;
   object-fit: cover;
-  object-position: center top;
+  object-position: center top; /* ✅ HEAD FIX */
   margin-right: 18px;
 }
 
@@ -50,54 +49,36 @@ section {
   text-align: center;
 }
 
-h2 {
+.care-section h2 {
   font-size: 28px;
   margin-bottom: 35px;
 }
 
-/* ===== GRID ===== */
+/* ===== CARE CARDS ===== */
 .care-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 26px;
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* ===== PANELS ===== */
-details.care-card {
+.care-card {
   background: #ffffff;
-  border-radius: 18px;
-  padding: 22px 24px;
+  border-radius: 16px;
+  padding: 26px 22px;
   box-shadow: 0 10px 22px rgba(0,0,0,0.12);
-  text-align: left;
 }
 
-summary {
-  cursor: pointer;
-  list-style: none;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-summary h3 {
-  margin: 0;
+.care-card h3 {
+  margin: 0 0 10px;
   font-size: 18px;
 }
 
-.summary-text {
+.care-card p {
   font-size: 14px;
   color: #555;
-  margin-top: 6px;
-}
-
-.details-text {
-  margin-top: 14px;
-  font-size: 14px;
-  color: #444;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* ===== FOOTER ===== */
@@ -114,7 +95,7 @@ summary h3 {
 
 <body>
 
-<!-- ===== HEADER ===== -->
+<!-- HEADER -->
 <div class="header">
   <img src="profile.jpg" alt="Profile photo" class="profile-pic">
   <div>
@@ -123,65 +104,32 @@ summary h3 {
   </div>
 </div>
 
-<!-- ===== CARE EXPERIENCE ===== -->
-<section>
+<!-- CARE EXPERIENCE -->
+<section class="care-section">
   <h2>Care Settings Experience</h2>
 
   <div class="care-grid">
+    <div class="care-card">
+      <h3>Care Homes</h3>
+      <p>Residential and nursing care environments with a focus on dignity, safety, and wellbeing.</p>
+    </div>
 
-    <details class="care-card">
-      <summary>
-        <h3>Care Homes</h3>
-        <div class="summary-text">Residential and nursing care environments</div>
-      </summary>
-      <div class="details-text">
-        I have experience supporting individuals in residential and nursing
-        care settings, focusing on dignity, safety, and wellbeing. My work
-        includes assisting with daily living activities, following care plans,
-        and working closely with senior carers and nursing staff.
-      </div>
-    </details>
+    <div class="care-card">
+      <h3>Domiciliary Care</h3>
+      <p>Supporting individuals to live independently and safely in their own homes.</p>
+    </div>
 
-    <details class="care-card">
-      <summary>
-        <h3>Domiciliary Care</h3>
-        <div class="summary-text">Supporting individuals in their own homes</div>
-      </summary>
-      <div class="details-text">
-        I support individuals in their own homes to live independently and
-        safely, providing one-to-one care, daily routine support, and respecting
-        privacy and personal choice.
-      </div>
-    </details>
-
-    <details class="care-card">
-      <summary>
-        <h3>Day Centres</h3>
-        <div class="summary-text">Community-based support and engagement</div>
-      </summary>
-      <div class="details-text">
-        I support people in day centre settings by encouraging social
-        interaction, participation in group activities, and emotional wellbeing
-        within the community.
-      </div>
-    </details>
-
+    <div class="care-card">
+      <h3>Day Centres</h3>
+      <p>Community-based support, engagement, and meaningful daily activities.</p>
+    </div>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- FOOTER -->
 <div class="footer">
   © 2026 Kasun Boralugoda · Care Portfolio
 </div>
-
-<!-- ===== SAFETY SCRIPT (RESET ON LOAD ONLY) ===== -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("details").forEach(panel => {
-    panel.removeAttribute("open");
-  });
-});
-</script>
 
 </body>
 </html>
