@@ -29,7 +29,7 @@ body {
   border-radius: 50%;
   border: 3px solid #2c7be5;
   object-fit: cover;
-  object-position: center top; /* head visible */
+  object-position: center top;
   margin-right: 18px;
 }
 
@@ -44,7 +44,7 @@ body {
   margin-top: 4px;
 }
 
-/* ===== SECTIONS ===== */
+/* ===== SECTION ===== */
 section {
   padding: 60px 20px;
   text-align: center;
@@ -64,15 +64,15 @@ section {
   margin: 0 auto;
 }
 
-/* ===== CARE CARDS ===== */
+/* ===== CARE CARD ===== */
 .care-card {
   background: #ffffff;
   border-radius: 18px;
   padding: 26px 24px;
   box-shadow: 0 10px 22px rgba(0,0,0,0.12);
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
   text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .care-card:hover {
@@ -95,111 +95,3 @@ section {
   display: none;
   margin-top: 14px;
 }
-
-.care-details p {
-  font-size: 14px;
-  color: #444;
-  line-height: 1.6;
-}
-
-.care-card.active .care-details {
-  display: block;
-}
-
-/* ===== FOOTER ===== */
-.footer {
-  background: #ffffff;
-  padding: 22px;
-  text-align: center;
-  font-size: 13px;
-  color: #777;
-  border-top: 1px solid #e0e0e0;
-}
-</style>
-</head>
-
-<body>
-
-<!-- ===== HEADER ===== -->
-<div class="header">
-  <img src="profile.jpg" alt="Profile photo" class="profile-pic">
-  <div>
-    <div class="name">Kasun Boralugoda</div>
-    <div class="headline">Care | Innovation | Music | Community Impact</div>
-  </div>
-</div>
-
-<!-- ===== CARE SETTINGS ===== -->
-<section class="care-section">
-  <h2>Care Settings Experience</h2>
-
-  <div class="care-grid">
-
-    <div class="care-card" onclick="toggleDetails(this)">
-      <h3>Care Homes</h3>
-      <p class="care-summary">
-        Residential and nursing care environments.
-      </p>
-
-      <div class="care-details">
-        <p>
-          I have experience supporting individuals in residential and nursing
-          care settings, focusing on dignity, safety, and wellbeing. My work
-          includes assisting with daily living activities, following care plans,
-          and working closely with senior carers and nursing staff to provide
-          consistent, person-centred care.
-        </p>
-      </div>
-    </div>
-
-    <div class="care-card" onclick="toggleDetails(this)">
-      <h3>Domiciliary Care</h3>
-      <p class="care-summary">
-        Supporting individuals in their own homes.
-      </p>
-
-      <div class="care-details">
-        <p>
-          I support individuals in their own homes to live independently and
-          safely, providing one-to-one care tailored to their needs. This
-          includes assisting with daily routines, offering medication prompts,
-          and respecting privacy, choice, and independence in a familiar home
-          environment.
-        </p>
-      </div>
-    </div>
-
-    <div class="care-card" onclick="toggleDetails(this)">
-      <h3>Day Centres</h3>
-      <p class="care-summary">
-        Community-based support and engagement.
-      </p>
-
-      <div class="care-details">
-        <p>
-          I have experience supporting people in day centre settings by
-          encouraging social interaction, participation in group activities,
-          and emotional wellbeing. My role involves helping individuals stay
-          engaged, build confidence, and take part in meaningful daily
-          activities within the community.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<div class="footer">
-  © 2026 Kasun Boralugoda · Care Portfolio
-</div>
-
-<!-- ===== SCRIPT ===== -->
-<script>
-function toggleDetails(card) {
-  card.classList.toggle("active");
-}
-</script>
-
-</body>
-</html>
