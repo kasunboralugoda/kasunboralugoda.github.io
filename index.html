@@ -13,7 +13,7 @@ body {
   color: #222;
 }
 
-/* Header */
+/* ===== HEADER ===== */
 .header {
   display: flex;
   align-items: center;
@@ -23,16 +23,17 @@ body {
 }
 
 .profile-pic {
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   border: 3px solid #2c7be5;
   object-fit: cover;
-  margin-right: 16px;
+  object-position: center top; /* ✅ HEAD FIX */
+  margin-right: 18px;
 }
 
 .name {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
 }
 
@@ -42,53 +43,48 @@ body {
   margin-top: 4px;
 }
 
-/* Section wrapper */
+/* ===== SECTION ===== */
 section {
   padding: 60px 20px;
   text-align: center;
 }
 
-/* Care section */
 .care-section h2 {
-  font-size: 26px;
-  margin-bottom: 30px;
+  font-size: 28px;
+  margin-bottom: 35px;
 }
 
+/* ===== CARE CARDS ===== */
 .care-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
+  gap: 26px;
   max-width: 900px;
   margin: 0 auto;
 }
 
 .care-card {
   background: #ffffff;
-  border-radius: 14px;
-  padding: 20px;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
-}
-
-.care-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
+  border-radius: 16px;
+  padding: 26px 22px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
 }
 
 .care-card h3 {
-  margin: 15px 0 6px;
+  margin: 0 0 10px;
+  font-size: 18px;
 }
 
 .care-card p {
   font-size: 14px;
   color: #555;
+  line-height: 1.5;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 .footer {
   background: #ffffff;
-  padding: 20px;
+  padding: 22px;
   text-align: center;
   font-size: 13px;
   color: #777;
@@ -99,7 +95,7 @@ section {
 
 <body>
 
-<!-- Header -->
+<!-- HEADER -->
 <div class="header">
   <img src="profile.jpg" alt="Profile photo" class="profile-pic">
   <div>
@@ -108,34 +104,29 @@ section {
   </div>
 </div>
 
-<!-- Care Experience -->
+<!-- CARE EXPERIENCE -->
 <section class="care-section">
   <h2>Care Settings Experience</h2>
 
   <div class="care-grid">
-
     <div class="care-card">
-      <img src="care-homes.jpg" alt="Care Homes">
       <h3>Care Homes</h3>
-      <p>Residential and nursing care environments</p>
+      <p>Residential and nursing care environments with a focus on dignity, safety, and wellbeing.</p>
     </div>
 
     <div class="care-card">
-      <img src="dom-care.jpg" alt="Domiciliary Care">
       <h3>Domiciliary Care</h3>
-      <p>Supporting individuals in their own homes</p>
+      <p>Supporting individuals to live independently and safely in their own homes.</p>
     </div>
 
     <div class="care-card">
-      <img src="day-centres.jpg" alt="Day Centres">
       <h3>Day Centres</h3>
-      <p>Community-based support and engagement</p>
+      <p>Community-based support, engagement, and meaningful daily activities.</p>
     </div>
-
   </div>
 </section>
 
-<!-- Footer -->
+<!-- FOOTER -->
 <div class="footer">
   © 2026 Kasun Boralugoda · Care Portfolio
 </div>
