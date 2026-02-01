@@ -10,6 +10,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f6f8fb;
+    color: #222;
 }
 
 /* ================= HEADER ================= */
@@ -45,22 +46,31 @@ body {
 
 /* ================= SECTION ================= */
 .section {
-    padding: 60px 20px 120px;
+    padding: 70px 20px 130px;
     text-align: center;
 }
 
 .section h2 {
-    margin-bottom: 60px;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.section .intro {
+    max-width: 620px;
+    margin: 0 auto 70px;
+    font-size: 15px;
+    color: #555;
 }
 
 /* ================= TRIANGLE ================= */
 .triangle-wrapper {
     position: relative;
     max-width: 900px;
-    height: 460px;
+    height: 480px;
     margin: 0 auto;
 }
 
+/* SVG lines */
 .triangle-svg {
     position: absolute;
     inset: 0;
@@ -77,15 +87,17 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     cursor: pointer;
     z-index: 2;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
 }
 
 .card h3 {
     margin: 0 0 6px;
+    font-size: 18px;
 }
 
 .card .summary {
@@ -112,7 +124,6 @@ body {
     transform: translateX(-50%);
 }
 
-/* 🔧 ADJUSTED: moved UP + RIGHT */
 .card.left {
     bottom: 40px;
     left: 80px;
@@ -123,13 +134,29 @@ body {
     right: 80px;
 }
 
+/* ================= CENTER LABEL ================= */
+.center-label {
+    position: absolute;
+    top: 190px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 14px 22px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    font-size: 14px;
+    color: #444;
+    z-index: 3;
+}
+
 /* ================= MOBILE ================= */
 @media (max-width: 900px) {
     .triangle-wrapper {
         height: auto;
     }
 
-    .triangle-svg {
+    .triangle-svg,
+    .center-label {
         display: none;
     }
 
@@ -156,24 +183,33 @@ body {
 <!-- SECTION -->
 <div class="section">
     <h2>Care Settings Experience</h2>
+    <div class="intro">
+        Experience across interconnected care environments, supporting continuity of care,
+        dignity, safety, and person-centred outcomes.
+    </div>
 
     <div class="triangle-wrapper">
 
         <!-- TRIANGLE LINES -->
-        <svg class="triangle-svg" viewBox="0 0 900 460" preserveAspectRatio="none">
-            <line x1="450" y1="80" x2="130" y2="380" stroke="#2c7be5" stroke-width="3"/>
-            <line x1="450" y1="80" x2="770" y2="380" stroke="#2c7be5" stroke-width="3"/>
-            <line x1="130" y1="380" x2="770" y2="380" stroke="#2c7be5" stroke-width="3"/>
+        <svg class="triangle-svg" viewBox="0 0 900 480" preserveAspectRatio="none">
+            <line x1="450" y1="90" x2="150" y2="390" stroke="#2c7be5" stroke-width="3"/>
+            <line x1="450" y1="90" x2="750" y2="390" stroke="#2c7be5" stroke-width="3"/>
+            <line x1="150" y1="390" x2="750" y2="390" stroke="#2c7be5" stroke-width="3"/>
         </svg>
+
+        <!-- CENTER MEANING -->
+        <div class="center-label">
+            Person-Centred Care in Practice
+        </div>
 
         <!-- CARE HOMES -->
         <div class="card top" onclick="toggleCard(this)">
             <h3>Care Homes</h3>
             <div class="summary">Residential and nursing care environments</div>
             <div class="details">
-                I have experience supporting individuals in residential and nursing care settings,
-                focusing on dignity, safety, and wellbeing while following care plans and working
-                closely with senior carers and nursing staff.
+                Supporting individuals in residential and nursing settings with a focus on
+                dignity, safety, and wellbeing, while following care plans and working closely
+                with senior carers and nursing staff.
             </div>
         </div>
 
@@ -182,8 +218,9 @@ body {
             <h3>Domiciliary Care</h3>
             <div class="summary">Supporting individuals in their own homes</div>
             <div class="details">
-                I support people to live independently at home by assisting with daily routines,
-                personal care, medication prompts, and maintaining a safe, respectful environment.
+                Assisting people to live independently at home by supporting daily routines,
+                personal care, medication prompts, and maintaining a safe and respectful
+                environment.
             </div>
         </div>
 
@@ -192,8 +229,8 @@ body {
             <h3>Day Centres</h3>
             <div class="summary">Community-based support and engagement</div>
             <div class="details">
-                I assist in day centre settings by encouraging participation in activities,
-                social interaction, and providing meaningful engagement in a supportive community.
+                Encouraging participation in activities, social interaction, and meaningful
+                engagement in a supportive community setting that promotes wellbeing.
             </div>
         </div>
 
