@@ -6,6 +6,7 @@
 <title>Kasun Boralugoda | Care Portfolio</title>
 
 <style>
+/* ===== BASE ===== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -28,7 +29,7 @@ body {
   border-radius: 50%;
   border: 3px solid #2c7be5;
   object-fit: cover;
-  object-position: center top; /* ✅ HEAD FIX */
+  object-position: center top;
   margin-right: 18px;
 }
 
@@ -49,36 +50,119 @@ section {
   text-align: center;
 }
 
-.care-section h2 {
+h2 {
   font-size: 28px;
   margin-bottom: 35px;
 }
 
-/* ===== CARE CARDS ===== */
-.care-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 26px;
-  max-width: 900px;
+/* ===== TRIANGLE CONTAINER ===== */
+.triangle-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 520px;  /* adjust if needed */
   margin: 0 auto;
 }
 
-.care-card {
+/* ===== PANEL STYLES ===== */
+details.care-card {
+  position: absolute;
+  width: 280px;
   background: #ffffff;
-  border-radius: 16px;
-  padding: 26px 22px;
+  border-radius: 18px;
+  padding: 22px 24px;
   box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+  text-align: left;
 }
 
-.care-card h3 {
-  margin: 0 0 10px;
+details.care-card[open] {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.16);
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary h3 {
+  margin: 0;
   font-size: 18px;
 }
 
-.care-card p {
+.summary-text {
   font-size: 14px;
   color: #555;
-  line-height: 1.5;
+  margin-top: 6px;
+}
+
+.details-text {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ===== POSITION THE THREE PANELS ===== */
+/* Top panel: Care Homes */
+#panel-care-homes {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+/* Bottom-left panel: Domiciliary Care */
+#panel-dom-care {
+  bottom: 0;
+  left: 10%;
+  transform: translate(0, 0);
+}
+
+/* Bottom-right panel: Day Centres */
+#panel-day-centres {
+  bottom: 0;
+  right: 10%;
+  transform: translate(0, 0);
+}
+
+/* ===== OPTIONAL: connecting lines (simple) ===== */
+.triangle-container::before,
+.triangle-container::after,
+.triangle-container .line-mid {
+  content: "";
+  position: absolute;
+  background: #2c7be5;
+}
+
+/* left side line */
+.triangle-container::before {
+  width: 2px;
+  height: 240px;  /* length of line */
+  top: 90px;      /* start a bit below top panel */
+  left: 50%;
+  transform: translateX(-50%) rotate(-55deg);
+  transform-origin: top center;
+}
+
+/* right side line */
+.triangle-container::after {
+  width: 2px;
+  height: 240px;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%) rotate(55deg);
+  transform-origin: top center;
+}
+
+/* optional middle base line if you want one between bottom nodes */
+.triangle-container .line-mid {
+  width: calc(80% - 120px); /* make it shorter than full width */
+  height: 2px;
+  bottom: 60px;
+  left: 10%;
 }
 
 /* ===== FOOTER ===== */
@@ -95,7 +179,7 @@ section {
 
 <body>
 
-<!-- HEADER -->
+<!-- ===== HEADER ===== -->
 <div class="header">
   <img src="profile.jpg" alt="Profile photo" class="profile-pic">
   <div>
@@ -104,32 +188,66 @@ section {
   </div>
 </div>
 
-<!-- CARE EXPERIENCE -->
-<section class="care-section">
+<!-- ===== CARE EXPERIENCE with triangle layout ===== -->
+<section>
   <h2>Care Settings Experience</h2>
 
-  <div class="care-grid">
-    <div class="care-card">
-      <h3>Care Homes</h3>
-      <p>Residential and nursing care environments with a focus on dignity, safety, and wellbeing.</p>
-    </div>
+  <div class="triangle-container">
+    <!-- Optional decorative base line -->
+    <div class="line-mid"></div>
 
-    <div class="care-card">
-      <h3>Domiciliary Care</h3>
-      <p>Supporting individuals to live independently and safely in their own homes.</p>
-    </div>
+    <details id="panel-care-homes" class="care-card">
+      <summary>
+        <h3>Care Homes</h3>
+        <div class="summary-text">Residential and nursing care environments</div>
+      </summary>
+      <div class="details-text">
+        I have experience supporting individuals in residential and nursing
+        care settings, focusing on dignity, safety, and wellbeing. My work
+        includes assisting with daily living activities, following care plans,
+        and working closely with senior carers and nursing staff.
+      </div>
+    </details>
 
-    <div class="care-card">
-      <h3>Day Centres</h3>
-      <p>Community-based support, engagement, and meaningful daily activities.</p>
-    </div>
+    <details id="panel-dom-care" class="care-card">
+      <summary>
+        <h3>Domiciliary Care</h3>
+        <div class="summary-text">Supporting individuals in their own homes</div>
+      </summary>
+      <div class="details-text">
+        I support individuals in their own homes to live independently and
+        safely, providing one-to-one care, daily routine support, and respecting
+        privacy and personal choice.
+      </div>
+    </details>
+
+    <details id="panel-day-centres" class="care-card">
+      <summary>
+        <h3>Day Centres</h3>
+        <div class="summary-text">Community-based support and engagement</div>
+      </summary>
+      <div class="details-text">
+        I support people in day centre settings by encouraging social
+        interaction, participation in group activities, and emotional wellbeing
+        within the community.
+      </div>
+    </details>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <div class="footer">
   © 2026 Kasun Boralugoda · Care Portfolio
 </div>
+
+<!-- ===== SAFETY SCRIPT (RESET ON LOAD ONLY) ===== -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("details").forEach(panel => {
+    panel.removeAttribute("open");
+  });
+});
+</script>
 
 </body>
 </html>
