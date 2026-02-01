@@ -84,15 +84,20 @@ body {
     background: #fff;
     border-radius: 16px;
     padding: 18px;
+
+    /* 🔹 subtle outline */
+    border: 1.5px solid rgba(44,123,229,0.35);
+
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     cursor: pointer;
     z-index: 2;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+    border-color: #2c7be5;
 }
 
 .card h3 {
@@ -134,29 +139,13 @@ body {
     right: 80px;
 }
 
-/* ================= CENTER LABEL ================= */
-.center-label {
-    position: absolute;
-    top: 190px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #fff;
-    padding: 14px 22px;
-    border-radius: 14px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    font-size: 14px;
-    color: #444;
-    z-index: 3;
-}
-
 /* ================= MOBILE ================= */
 @media (max-width: 900px) {
     .triangle-wrapper {
         height: auto;
     }
 
-    .triangle-svg,
-    .center-label {
+    .triangle-svg {
         display: none;
     }
 
@@ -196,11 +185,6 @@ body {
             <line x1="450" y1="90" x2="750" y2="390" stroke="#2c7be5" stroke-width="3"/>
             <line x1="150" y1="390" x2="750" y2="390" stroke="#2c7be5" stroke-width="3"/>
         </svg>
-
-        <!-- CENTER MEANING -->
-        <div class="center-label">
-            Person-Centred Care in Practice
-        </div>
 
         <!-- CARE HOMES -->
         <div class="card top" onclick="toggleCard(this)">
