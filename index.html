@@ -12,7 +12,7 @@ body {
     background: #f6f8fb;
 }
 
-/* ===== HEADER ===== */
+/* ================= HEADER ================= */
 .header {
     display: flex;
     align-items: center;
@@ -25,10 +25,12 @@ body {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    object-fit: contain;   /* ✅ FIX: no cropping */
-    background: #fff;
     border: 3px solid #2c7be5;
     margin-right: 20px;
+
+    object-fit: cover;        /* fills circle */
+    object-position: 50% 15%; /* keeps head visible */
+    background-color: #f6f8fb;
 }
 
 .name {
@@ -41,7 +43,7 @@ body {
     color: #555;
 }
 
-/* ===== SECTION ===== */
+/* ================= SECTION ================= */
 .section {
     padding: 60px 20px 120px;
     text-align: center;
@@ -51,7 +53,7 @@ body {
     margin-bottom: 60px;
 }
 
-/* ===== TRIANGLE LAYOUT ===== */
+/* ================= TRIANGLE ================= */
 .triangle-wrapper {
     position: relative;
     max-width: 900px;
@@ -59,14 +61,14 @@ body {
     margin: 0 auto;
 }
 
-/* ===== SVG TRIANGLE ===== */
+/* SVG lines */
 .triangle-svg {
     position: absolute;
     inset: 0;
     z-index: 0;
 }
 
-/* ===== CARDS ===== */
+/* ================= CARDS ================= */
 .card {
     position: absolute;
     width: 260px;
@@ -92,7 +94,6 @@ body {
     color: #555;
 }
 
-/* expandable content */
 .card .details {
     display: none;
     margin-top: 12px;
@@ -106,7 +107,7 @@ body {
     display: block;
 }
 
-/* ===== POSITIONS ===== */
+/* positions */
 .card.top {
     top: 0;
     left: 50%;
@@ -123,7 +124,7 @@ body {
     right: 0;
 }
 
-/* ===== MOBILE SAFE ===== */
+/* ================= MOBILE ================= */
 @media (max-width: 900px) {
     .triangle-wrapper {
         height: auto;
@@ -159,7 +160,7 @@ body {
 
     <div class="triangle-wrapper">
 
-        <!-- TRIANGLE -->
+        <!-- TRIANGLE LINES -->
         <svg class="triangle-svg" viewBox="0 0 900 460" preserveAspectRatio="none">
             <line x1="450" y1="80" x2="130" y2="380" stroke="#2c7be5" stroke-width="3"/>
             <line x1="450" y1="80" x2="770" y2="380" stroke="#2c7be5" stroke-width="3"/>
@@ -177,13 +178,13 @@ body {
             </div>
         </div>
 
-        <!-- DOMICILIARY -->
+        <!-- DOMICILIARY CARE -->
         <div class="card left" onclick="toggleCard(this)">
             <h3>Domiciliary Care</h3>
             <div class="summary">Supporting individuals in their own homes</div>
             <div class="details">
                 I support people to live independently at home by assisting with daily routines,
-                medication prompts, personal care, and ensuring a safe and respectful environment.
+                personal care, medication prompts, and maintaining a safe, respectful environment.
             </div>
         </div>
 
@@ -193,8 +194,7 @@ body {
             <div class="summary">Community-based support and engagement</div>
             <div class="details">
                 I assist in day centre settings by encouraging participation in activities,
-                social interaction, and providing meaningful engagement in a supportive community
-                environment.
+                social interaction, and providing meaningful engagement in a supportive community.
             </div>
         </div>
 
